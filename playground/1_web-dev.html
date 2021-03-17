@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vue Inflearn Start</h1>
+    <div id="app"></div>
+
+    <script>
+        //  $("#app")
+        var div = document.querySelector('#app');
+        //console.log(div);
+
+        //  div 태그 안에 해당 텍스트 저장
+        //  1-1(직접 입력)
+        div.innerHTML = 'Hello Vue World';
+
+        //  1-2(변수 사용)
+        var str = 'Hello Vue World!!!';
+        div.innerHTML = str;
+
+        //  2
+        str = 'Hello Change Str';
+        //  str 값을 변경하였지만 화면에서는 변경되지 않는다.
+        //  다시 div에 할당을 해줌으로서 화면에서도 변경이 된다.
+        div.innerHTML = str;
+
+    </script>
+</body>
+</html>
