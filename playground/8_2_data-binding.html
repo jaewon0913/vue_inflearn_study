@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>뷰 디렉티브와 v-bind, v-if, v-show</h1>
+    <div id="app">
+       <p v-bind:id="uuid" v-bind:class="name">{{ num }}</p>
+       <!-- <p id="abc1234" class="text-blue">{{ num }}</p> 화면상에서의 코드 -->
+       <p>{{ doubleNum }}</p>
+
+       <!-- if 결과 값에 따라 화면에서 코드 자체가 안보인다. -->
+       <div v-if="loading">
+           Loading...
+       </div>
+       <div v-else>
+           test user has been logged in
+       </div>
+
+       <!-- v-show는 v-if와 다르게 결과 값에 따라 display:none이 된다. -->
+       <div v-show="loading">
+           Loading...
+       </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data:  {
+                num: 10,
+                uuid: 'abc1234',
+                name: 'text-blue',
+                loading: true
+            },
+            computed: {
+                doubleNum: function(){
+                    return this.num * 2;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
